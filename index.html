@@ -1727,7 +1727,7 @@
           <div class="glass-card">
             <div class="profile-card-layout">
               <div class="profile-avatar-container">
-                <img id="profile-avatar-display" src="santhosh_profile_portrait.jpg" alt="Santhosh MRS - Software Developer" class="profile-avatar-img" title="Click to view alternate portrait">
+                <img id="profile-avatar-display" src="santhosh_profile_portrait.jpg?v=clean3" alt="Santhosh MRS - Software Developer" class="profile-avatar-img" title="Click to view alternate portrait">
                 <button id="avatar-switch-btn" class="avatar-switch-badge" title="Switch photo preview">
                   <i class="fa-solid fa-arrows-rotate"></i> <span id="photo-label">Photo 1</span>
                 </button>
@@ -2302,12 +2302,12 @@
 
     function getPrimaryPath(index) {
       const paddedIndex = String(index).padStart(3, '0');
-      return `ezgif-3a92ee84a4210252-jpg/ezgif-frame-${paddedIndex}.jpg`;
+      return `ezgif-3a92ee84a4210252-jpg/ezgif-frame-${paddedIndex}.jpg?v=clean3`;
     }
 
     function getFallbackPath(index) {
       const paddedIndex = String(index).padStart(3, '0');
-      return `ezgif-frame-${paddedIndex}.jpg`;
+      return `ezgif-frame-${paddedIndex}.jpg?v=clean3`;
     }
 
     function hideLoader() {
@@ -2526,8 +2526,8 @@
 
     // Profile Photo Switcher
     const profilePhotos = [
-      { src: 'santhosh_profile_portrait.jpg', label: 'Photo 1' },
-      { src: 'santhosh 1 portfolio image.jpg', label: 'Photo 2' }
+      { src: 'santhosh_profile_portrait.jpg?v=clean3', label: 'Photo 1' },
+      { src: 'santhosh 1 portfolio image.jpg?v=clean3', label: 'Photo 2' }
     ];
     let currentPhotoIdx = 0;
     const avatarDisplay = document.getElementById('profile-avatar-display');

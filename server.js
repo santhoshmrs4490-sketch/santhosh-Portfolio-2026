@@ -13,8 +13,16 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'ok' });
 });
 
-// Serve static files from root directory
-app.use(express.static(__dirname));
+// Serve static files from root directory with no-cache headers to prevent stale image caching
+app.use(express.static(__dirname, {
+  etag: false,
+  maxAge: 0,
+  setHeaders: (res) => {
+    res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    res.setHeader('Pragma', 'no-cache');
+    res.setHeader('Expires', '0');
+  }
+}));
 
 // Single-page / static fallback
 app.get('*', (req, res) => {
