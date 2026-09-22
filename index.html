@@ -778,6 +778,847 @@
       color: var(--text-muted);
       font-size: 0.9rem;
     }
+
+    /* --- Interactive Header Tools --- */
+    .nav-tool-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid var(--border-accent);
+      color: #93c5fd;
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+
+    .nav-tool-btn:hover {
+      background: rgba(59, 130, 246, 0.25);
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+    }
+
+    .nav-icon-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 0.95rem;
+    }
+
+    .nav-icon-btn:hover {
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+    }
+
+    .nav-icon-btn.active {
+      color: #38bdf8;
+      border-color: rgba(56, 189, 248, 0.4);
+      background: rgba(56, 189, 248, 0.12);
+    }
+
+    @media (max-width: 992px) {
+      .nav-links {
+        display: none;
+      }
+      header {
+        padding: 1rem 1.4rem;
+      }
+    }
+
+    /* --- Profile Showcase Card (About Section) --- */
+    .profile-card-layout {
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .profile-card-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    .profile-avatar-container {
+      position: relative;
+      width: 220px;
+      height: 240px;
+      margin: 0 auto;
+      border-radius: 16px;
+    }
+
+    .profile-avatar-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 16px;
+      border: 2px solid rgba(59, 130, 246, 0.4);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 20px rgba(59, 130, 246, 0.25);
+      transition: transform 0.35s ease, box-shadow 0.35s ease, opacity 0.25s ease;
+      cursor: pointer;
+    }
+
+    .profile-avatar-img:hover {
+      transform: scale(1.02);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7), 0 0 28px rgba(59, 130, 246, 0.4);
+    }
+
+    .avatar-switch-badge {
+      position: absolute;
+      top: 8px;
+      right: 8px;
+      background: rgba(13, 18, 30, 0.88);
+      border: 1px solid rgba(59, 130, 246, 0.5);
+      color: #93c5fd;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.2rem 0.55rem;
+      border-radius: 12px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      backdrop-filter: blur(8px);
+      transition: all 0.2s ease;
+      z-index: 10;
+    }
+
+    .avatar-switch-badge:hover {
+      background: rgba(59, 130, 246, 0.25);
+      color: #fff;
+      border-color: #60a5fa;
+    }
+
+    .profile-status-pill {
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(13, 18, 30, 0.95);
+      border: 1px solid rgba(34, 197, 94, 0.4);
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: #4ade80;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      white-space: nowrap;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+      z-index: 10;
+    }
+
+    .status-pulse-dot {
+      width: 7px;
+      height: 7px;
+      background: #22c55e;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #22c55e;
+      animation: pulseGreen 1.8s infinite;
+    }
+
+    @keyframes pulseGreen {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(1.25); }
+    }
+
+    .profile-info-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .profile-location-bar {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+      padding: 0.35rem 0.9rem;
+      border-radius: 20px;
+      width: fit-content;
+    }
+
+    @media (max-width: 768px) {
+      .profile-location-bar {
+        margin: 0 auto;
+      }
+    }
+
+    .profile-header-name {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.5px;
+    }
+
+    .profile-header-role {
+      font-size: 1.02rem;
+      color: #93c5fd;
+      font-weight: 500;
+    }
+
+    .profile-tags-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 0.4rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-tags-row {
+        justify-content: center;
+      }
+    }
+
+    .profile-meta-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.35rem 0.75rem;
+      border-radius: 8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .profile-meta-tag i {
+      color: var(--primary);
+    }
+
+    .profile-action-buttons {
+      display: flex;
+      gap: 0.8rem;
+      margin-top: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .profile-action-buttons {
+        justify-content: center;
+      }
+    }
+
+    .btn-copy-action {
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid var(--border-accent);
+      color: #60a5fa;
+      padding: 0.45rem 1rem;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: all 0.2s ease;
+      font-family: inherit;
+    }
+
+    .btn-copy-action:hover {
+      background: rgba(59, 130, 246, 0.22);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* --- Interactive Systems & Simulation Lab Section --- */
+    .lab-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 2rem;
+    }
+
+    @media (max-width: 960px) {
+      .lab-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .lab-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2.2rem;
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .lab-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #3b82f6, #6366f1, #06b6d4);
+    }
+
+    .lab-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .lab-title-group h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 0.35rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+
+    .lab-title-group p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .lab-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 0.3rem 0.75rem;
+      border-radius: 6px;
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid var(--border-accent);
+      color: #60a5fa;
+    }
+
+    .sim-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 1.4rem;
+      border-radius: 12px;
+    }
+
+    .control-item {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .control-label-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .control-value {
+      color: #60a5fa;
+      font-family: monospace;
+      font-size: 0.95rem;
+      font-weight: 700;
+    }
+
+    .sim-slider {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    .sim-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: #3b82f6;
+      border: 2px solid #fff;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+      transition: transform 0.15s ease;
+    }
+
+    .sim-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .sim-readout-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.8rem;
+    }
+
+    @media (max-width: 600px) {
+      .sim-readout-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .readout-box {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.9rem;
+      text-align: center;
+    }
+
+    .readout-label {
+      font-size: 0.76rem;
+      color: var(--text-dim);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.35rem;
+    }
+
+    .readout-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #fff;
+    }
+
+    .sim-status-banner {
+      background: rgba(239, 68, 68, 0.1);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      border-radius: 10px;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      transition: all 0.3s ease;
+    }
+
+    .sim-status-banner.optimal {
+      background: rgba(34, 197, 94, 0.1);
+      border-color: rgba(34, 197, 94, 0.3);
+    }
+
+    .sim-status-banner.warning {
+      background: rgba(245, 158, 11, 0.1);
+      border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .sim-status-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .sim-status-desc {
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: var(--text-muted);
+    }
+
+    /* Algorithm Benchmark Lab */
+    .bench-controls-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 1rem;
+      border-radius: 12px;
+    }
+
+    .bench-size-group {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .bench-size-btn {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: monospace;
+      transition: all 0.2s ease;
+    }
+
+    .bench-size-btn.active {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: var(--border-accent);
+      color: #60a5fa;
+    }
+
+    .btn-run-bench {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.3rem;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 15px rgba(59, 130, 246, 0.35);
+      transition: all 0.25s ease;
+      font-family: inherit;
+    }
+
+    .btn-run-bench:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(59, 130, 246, 0.5);
+    }
+
+    .bench-results-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .bench-result-item {
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 0.95rem 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .bench-item-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.88rem;
+    }
+
+    .bench-algo-name {
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .bench-complexity {
+      font-size: 0.76rem;
+      font-family: monospace;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+    }
+
+    .bench-time {
+      font-family: monospace;
+      font-weight: 700;
+      color: #60a5fa;
+      font-size: 0.95rem;
+    }
+
+    .bench-progress-bar {
+      width: 100%;
+      height: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .bench-progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #3b82f6, #06b6d4);
+      width: 0%;
+      border-radius: 4px;
+      transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .bench-progress-fill.fast {
+      background: linear-gradient(90deg, #10b981, #34d399);
+    }
+
+    .bench-progress-fill.medium {
+      background: linear-gradient(90deg, #3b82f6, #6366f1);
+    }
+
+    .bench-progress-fill.slow {
+      background: linear-gradient(90deg, #f59e0b, #ef4444);
+    }
+
+    /* --- Floating Terminal FAB --- */
+    .floating-terminal-fab {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: rgba(13, 18, 30, 0.88);
+      border: 1px solid var(--border-accent);
+      color: #fff;
+      padding: 0.75rem 1.4rem;
+      border-radius: 30px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      font-family: monospace;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      z-index: 900;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.25);
+      transition: all 0.3s ease;
+    }
+
+    .floating-terminal-fab:hover {
+      transform: translateY(-4px) scale(1.03);
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.6), 0 0 25px rgba(59, 130, 246, 0.45);
+      border-color: #60a5fa;
+    }
+
+    .fab-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+    }
+
+    /* --- Developer CLI Terminal Modal --- */
+    .terminal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(3, 5, 8, 0.75);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .terminal-backdrop.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .terminal-window {
+      width: 100%;
+      max-width: 840px;
+      height: 540px;
+      background: #090d16;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      border-radius: 14px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(59, 130, 246, 0.15);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+      transform: scale(0.95) translateY(20px);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .terminal-backdrop.active .terminal-window {
+      transform: scale(1) translateY(0);
+    }
+
+    .terminal-titlebar {
+      background: #0d1322;
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.65rem 1.1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .terminal-dots {
+      display: flex;
+      gap: 0.45rem;
+    }
+
+    .t-dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+
+    .t-dot-red { background: #ef4444; }
+    .t-dot-yellow { background: #f59e0b; }
+    .t-dot-green { background: #10b981; }
+
+    .terminal-title-text {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .terminal-body {
+      flex: 1;
+      padding: 1.2rem;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      color: #e2e8f0;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .terminal-output {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .terminal-line {
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .t-command {
+      color: #60a5fa;
+      font-weight: bold;
+    }
+
+    .t-success { color: #34d399; }
+    .t-warn { color: #fbbf24; }
+    .t-accent { color: #c084fc; }
+    .t-dim { color: #64748b; }
+
+    .terminal-prompt-row {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
+    }
+
+    .prompt-label {
+      color: #38bdf8;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .terminal-input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      color: #fff;
+      font-family: inherit;
+      font-size: 0.88rem;
+    }
+
+    .terminal-chips-bar {
+      background: #0d1322;
+      border-top: 1px solid var(--border-color);
+      padding: 0.6rem 1rem;
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .terminal-chips-bar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cmd-chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      font-family: monospace;
+    }
+
+    .cmd-chip:hover {
+      background: rgba(59, 130, 246, 0.2);
+      border-color: var(--border-accent);
+      color: #93c5fd;
+    }
+
+    /* --- Toast Notification --- */
+    .toast-container {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2000;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      pointer-events: none;
+    }
+
+    .toast-bubble {
+      background: rgba(13, 18, 30, 0.95);
+      border: 1px solid var(--border-accent);
+      color: #fff;
+      padding: 0.7rem 1.4rem;
+      border-radius: 24px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(59, 130, 246, 0.3);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      animation: toastIn 0.3s cubic-bezier(0.16, 1, 0.3, 1), toastOut 0.3s ease 2.7s forwards;
+    }
+
+    @keyframes toastIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes toastOut {
+      from { opacity: 1; transform: translateY(0); }
+      to { opacity: 0; transform: translateY(-10px); }
+    }
   </style>
 </head>
 <body>
@@ -803,10 +1644,17 @@
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#interactive-lab"><i class="fa-solid fa-flask" style="color: #60a5fa; margin-right: 4px;"></i>Lab</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#education">Education</a></li>
     </ul>
-    <div style="display: flex; gap: 0.8rem; align-items: center;">
+    <div style="display: flex; gap: 0.65rem; align-items: center;">
+      <button id="header-terminal-btn" class="nav-tool-btn" title="Open Interactive Developer CLI">
+        <i class="fa-solid fa-terminal"></i> Terminal
+      </button>
+      <button id="sound-toggle-btn" class="nav-icon-btn" title="Toggle Sound FX">
+        <i class="fa-solid fa-volume-xmark"></i>
+      </button>
       <a href="https://github.com/santhoshmrs4490-sketch" target="_blank" class="contact-btn-nav" style="background: rgba(255, 255, 255, 0.08); border: 1px solid var(--border-color); box-shadow: none;">
         <i class="fa-brands fa-github"></i> GitHub
       </a>
@@ -837,12 +1685,12 @@
             <a href="#projects" class="btn-primary">
               <i class="fa-solid fa-rocket"></i> View Featured Projects
             </a>
-            <a href="https://github.com/santhoshmrs4490-sketch" target="_blank" class="btn-secondary">
-              <i class="fa-brands fa-github"></i> GitHub Profile
+            <a href="#interactive-lab" class="btn-secondary" style="border-color: var(--border-accent); color: #93c5fd;">
+              <i class="fa-solid fa-flask"></i> Interactive Lab & Sim
             </a>
-            <a href="https://vercel.com/ck21-2777/~/deployments" target="_blank" class="btn-secondary">
-              <i class="fa-solid fa-cloud-arrow-up"></i> Vercel Deployments
-            </a>
+            <button id="hero-terminal-btn" class="btn-secondary" style="cursor: pointer;">
+              <i class="fa-solid fa-terminal"></i> Launch Developer CLI
+            </button>
           </div>
 
           <div class="quick-meta">
@@ -877,12 +1725,45 @@
 
         <div class="about-grid">
           <div class="glass-card">
-            <p class="profile-bio">
-              Solid foundations in systems programming (C, C++, Python) combined with modern simulation design. Creator of <strong>CodeRed</strong>, an interactive hospital crisis surge command platform built for <strong>VIT Hackathon: Resonance 1.0</strong>, and <strong>Bite</strong>, an intuitive food ordering system.
-            </p>
-            <p class="profile-bio">
-              Adept at breaking down complex operational systems, algorithmic problem solving, and building intuitive, data-driven web tools for critical decision-making and real-world utility.
-            </p>
+            <div class="profile-card-layout">
+              <div class="profile-avatar-container">
+                <img id="profile-avatar-display" src="santhosh_profile_portrait.jpg" alt="Santhosh MRS - Software Developer" class="profile-avatar-img" title="Click to view alternate portrait">
+                <button id="avatar-switch-btn" class="avatar-switch-badge" title="Switch photo preview">
+                  <i class="fa-solid fa-arrows-rotate"></i> <span id="photo-label">Photo 1</span>
+                </button>
+                <div class="profile-status-pill">
+                  <span class="status-pulse-dot"></span>
+                  <span>Available for Tech Roles</span>
+                </div>
+              </div>
+              <div class="profile-info-content">
+                <div class="profile-location-bar">
+                  <i class="fa-solid fa-location-dot" style="color: var(--primary);"></i>
+                  <span>Chennai, India</span> • <span id="live-ist-clock" style="color: #60a5fa; font-family: monospace; font-weight: 700;">--:--:-- IST</span>
+                </div>
+                <h3 class="profile-header-name">Santhosh MRS</h3>
+                <div class="profile-header-role">Computer Science Undergraduate & Systems Developer</div>
+                <p class="profile-bio" style="margin-bottom: 0.6rem; font-size: 0.96rem;">
+                  Solid foundations in systems programming (C, C++, Python) combined with modern simulation design. Creator of <strong>CodeRed</strong>, an interactive hospital crisis surge command platform built for <strong>VIT Hackathon: Resonance 1.0</strong>, and <strong>Bite</strong>, an intuitive food ordering system.
+                </p>
+                <div class="profile-tags-row">
+                  <span class="profile-meta-tag"><i class="fa-solid fa-graduation-cap"></i> SRM IST B.Tech '30</span>
+                  <span class="profile-meta-tag"><i class="fa-solid fa-trophy"></i> VIT Resonance 1.0</span>
+                  <span class="profile-meta-tag"><i class="fa-solid fa-microchip"></i> Systems & Algorithms</span>
+                </div>
+                <div class="profile-action-buttons">
+                  <button class="btn-copy-action btn-copy-trigger" data-copy="santhoshmrs4490@gmail.com" title="Copy Email">
+                    <i class="fa-solid fa-envelope"></i> Copy Email
+                  </button>
+                  <button class="btn-copy-action btn-copy-trigger" data-copy="+919361513313" title="Copy Phone">
+                    <i class="fa-solid fa-phone"></i> +91 9361513313
+                  </button>
+                  <a href="#interactive-lab" class="btn-copy-action" style="background: rgba(99, 102, 241, 0.15); border-color: rgba(99, 102, 241, 0.4); color: #a5b4fc; text-decoration: none;">
+                    <i class="fa-solid fa-flask"></i> Interactive Lab
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
 
           <div class="stats-card-group">
@@ -955,9 +1836,9 @@
               <li><strong>Seamless UI/UX:</strong> Glassmorphic responsive interface optimized for mobile and desktop ordering experience.</li>
             </ul>
             <div class="project-links">
-              <span class="project-link-btn">
-                <i class="fa-solid fa-utensils"></i> Active Portfolio Showcase
-              </span>
+              <a href="https://bite-food-orfering-platform.vercel.app/" target="_blank" class="project-link-btn">
+                Live Demo: bite-food-orfering-platform.vercel.app <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
             </div>
           </div>
 
@@ -979,6 +1860,179 @@
               <span class="project-link-btn">
                 <i class="fa-solid fa-microchip"></i> Core Systems Project
               </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Systems & Simulation Lab Section -->
+    <section id="interactive-lab">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-subtitle">Interactive Playground</div>
+          <h2 class="section-title">Systems & Simulation Lab</h2>
+          <p style="color: var(--text-muted); max-width: 680px; margin: 0.8rem auto 0; font-size: 1rem; line-height: 1.6;">
+            Test live algorithmic scenarios directly in your browser. Experiment with CodeRed's crisis triage decision model or benchmark real-time sorting performance.
+          </p>
+        </div>
+
+        <div class="lab-grid">
+          
+          <!-- Simulation 1: CodeRed Crisis Triage Sandbox -->
+          <div class="lab-card">
+            <div class="lab-header-row">
+              <div class="lab-title-group">
+                <h3><i class="fa-solid fa-hospital" style="color: #ef4444;"></i> CodeRed Surge Simulator</h3>
+                <p>Real-time patient surge vs. hospital resource saturation model</p>
+              </div>
+              <span class="lab-badge">Live Triage Model</span>
+            </div>
+
+            <div class="sim-controls">
+              <div class="control-item">
+                <div class="control-label-row">
+                  <span><i class="fa-solid fa-users"></i> Incoming Patient Surge Rate</span>
+                  <span class="control-value" id="val-surge-patients">260 patients / 24h</span>
+                </div>
+                <input type="range" min="50" max="500" value="260" step="10" class="sim-slider" id="slider-surge-patients">
+              </div>
+
+              <div class="control-item">
+                <div class="control-label-row">
+                  <span><i class="fa-solid fa-bed-pulse"></i> Operational ICU Beds</span>
+                  <span class="control-value" id="val-icu-beds">45 beds</span>
+                </div>
+                <input type="range" min="15" max="100" value="45" step="5" class="sim-slider" id="slider-icu-beds">
+              </div>
+
+              <div class="control-item">
+                <div class="control-label-row">
+                  <span><i class="fa-solid fa-lungs"></i> Emergency Ventilators</span>
+                  <span class="control-value" id="val-vents">28 units</span>
+                </div>
+                <input type="range" min="10" max="60" value="28" step="2" class="sim-slider" id="slider-vents">
+              </div>
+            </div>
+
+            <div class="sim-readout-grid">
+              <div class="readout-box">
+                <div class="readout-label">ICU Bed Occupancy</div>
+                <div class="readout-num" id="metric-occupancy">86.7%</div>
+              </div>
+              <div class="readout-box">
+                <div class="readout-label">Triage Bottleneck</div>
+                <div class="readout-num" id="metric-triage" style="color: #fbbf24;">HIGH STRAIN</div>
+              </div>
+              <div class="readout-box">
+                <div class="readout-label">Time to Saturation</div>
+                <div class="readout-num" id="metric-saturation">11.4 hrs</div>
+              </div>
+            </div>
+
+            <div class="sim-status-banner warning" id="sim-status-box">
+              <div class="sim-status-title" id="sim-status-title">
+                <i class="fa-solid fa-triangle-exclamation"></i> PROTOCOL DELTA: Resource Strain Detected
+              </div>
+              <div class="sim-status-desc" id="sim-status-desc">
+                Surge pressure exceeds standard baseline capacity. Automated recommendation: Divert non-critical triage cases to secondary clinics; stage reserve ventilator circuit 4.
+              </div>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.8rem; margin-top: auto;">
+              <button class="btn-copy-action" id="btn-reset-sim" style="background: rgba(255, 255, 255, 0.05); border-color: var(--border-color); color: var(--text-muted);">
+                <i class="fa-solid fa-rotate-left"></i> Reset Defaults
+              </button>
+              <a href="https://code-red001.lovable.app" target="_blank" class="project-link-btn" style="font-size: 0.85rem; padding: 0.5rem 1rem;">
+                Open Full CodeRed Platform <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Simulation 2: Real-time Algorithm Execution Benchmark -->
+          <div class="lab-card">
+            <div class="lab-header-row">
+              <div class="lab-title-group">
+                <h3><i class="fa-solid fa-bolt" style="color: #38bdf8;"></i> Algorithm Speed Benchmark</h3>
+                <p>Real-time execution measurement of sorting algorithms in your browser</p>
+              </div>
+              <span class="lab-badge" style="background: rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.4); color: #34d399;">Live Execution</span>
+            </div>
+
+            <div class="bench-controls-bar">
+              <div class="bench-size-group">
+                <span style="font-size: 0.82rem; color: var(--text-dim);">Dataset:</span>
+                <button class="bench-size-btn active" data-size="5000">5k Items</button>
+                <button class="bench-size-btn" data-size="15000">15k Items</button>
+                <button class="bench-size-btn" data-size="30000">30k Items</button>
+              </div>
+              <button class="btn-run-bench" id="btn-run-benchmark">
+                <i class="fa-solid fa-play"></i> Run Benchmark
+              </button>
+            </div>
+
+            <div class="bench-results-list">
+              <!-- QuickSort -->
+              <div class="bench-result-item">
+                <div class="bench-item-top">
+                  <span class="bench-algo-name">
+                    <i class="fa-solid fa-gauge-high" style="color: #3b82f6;"></i> QuickSort (Divide & Conquer)
+                  </span>
+                  <span class="bench-complexity">O(n log n)</span>
+                  <span class="bench-time" id="time-quicksort">Ready</span>
+                </div>
+                <div class="bench-progress-bar">
+                  <div class="bench-progress-fill fast" id="fill-quicksort"></div>
+                </div>
+              </div>
+
+              <!-- MergeSort -->
+              <div class="bench-result-item">
+                <div class="bench-item-top">
+                  <span class="bench-algo-name">
+                    <i class="fa-solid fa-diagram-project" style="color: #06b6d4;"></i> MergeSort (Stable Sorting)
+                  </span>
+                  <span class="bench-complexity">O(n log n)</span>
+                  <span class="bench-time" id="time-mergesort">Ready</span>
+                </div>
+                <div class="bench-progress-bar">
+                  <div class="bench-progress-fill medium" id="fill-mergesort"></div>
+                </div>
+              </div>
+
+              <!-- Native Sort -->
+              <div class="bench-result-item">
+                <div class="bench-item-top">
+                  <span class="bench-algo-name">
+                    <i class="fa-solid fa-microchip" style="color: #8b5cf6;"></i> Engine Native (Timsort)
+                  </span>
+                  <span class="bench-complexity">Hybrid O(n log n)</span>
+                  <span class="bench-time" id="time-nativesort">Ready</span>
+                </div>
+                <div class="bench-progress-bar">
+                  <div class="bench-progress-fill fast" id="fill-nativesort"></div>
+                </div>
+              </div>
+
+              <!-- Selection Sort -->
+              <div class="bench-result-item">
+                <div class="bench-item-top">
+                  <span class="bench-algo-name">
+                    <i class="fa-solid fa-stairs" style="color: #f59e0b;"></i> Selection Sort (Comparative)
+                  </span>
+                  <span class="bench-complexity">O(n²)</span>
+                  <span class="bench-time" id="time-quadsort">Ready</span>
+                </div>
+                <div class="bench-progress-bar">
+                  <div class="bench-progress-fill slow" id="fill-quadsort"></div>
+                </div>
+              </div>
+            </div>
+
+            <div style="font-size: 0.82rem; color: var(--text-dim); display: flex; align-items: center; gap: 0.5rem; margin-top: auto;">
+              <i class="fa-solid fa-circle-info" style="color: var(--primary);"></i>
+              <span>High-resolution browser timer (`performance.now()`) testing randomized integer sequences.</span>
             </div>
           </div>
 
@@ -1136,18 +2190,18 @@
 
           <!-- Interactive Contact Form -->
           <div class="glass-card">
-            <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for reaching out, Santhosh will get back to you shortly!');">
+            <form class="contact-form" id="portfolio-contact-form">
               <div class="form-group">
                 <label>Your Name</label>
-                <input type="text" class="form-control" placeholder="Enter your full name" required>
+                <input type="text" class="form-control" id="contact-name" placeholder="Enter your full name" required>
               </div>
               <div class="form-group">
                 <label>Email Address</label>
-                <input type="email" class="form-control" placeholder="Enter your email" required>
+                <input type="email" class="form-control" id="contact-email" placeholder="Enter your email" required>
               </div>
               <div class="form-group">
                 <label>Message</label>
-                <textarea class="form-control" rows="4" placeholder="Your message or project details..." required></textarea>
+                <textarea class="form-control" id="contact-msg" rows="4" placeholder="Your message or project details..." required></textarea>
               </div>
               <button type="submit" class="btn-primary" style="justify-content: center; width: 100%; margin-top: 0.5rem;">
                 <i class="fa-solid fa-paper-plane"></i> Send Message
@@ -1175,6 +2229,63 @@
     </footer>
 
   </div>
+
+  <!-- Interactive Developer CLI Terminal Modal -->
+  <div class="terminal-backdrop" id="terminal-modal">
+    <div class="terminal-window">
+      <div class="terminal-titlebar">
+        <div class="terminal-dots">
+          <div class="t-dot t-dot-red" id="terminal-close" title="Close Terminal"></div>
+          <div class="t-dot t-dot-yellow" id="terminal-min" title="Minimize"></div>
+          <div class="t-dot t-dot-green" id="terminal-max" title="Full Screen"></div>
+        </div>
+        <div class="terminal-title-text">santhosh@srm-systems:~ (bash)</div>
+        <div style="font-size: 0.75rem; color: var(--text-dim);">CLI v2.6.4</div>
+      </div>
+
+      <div class="terminal-body" id="terminal-body">
+        <div class="terminal-output" id="terminal-output">
+          <div class="terminal-line t-accent">
+   ____             _   _               _        __  __ ____  ____  
+  / ___|  __ _ _ __ | |_| |__   ___  ___| |__    |  \/  |  _ \/ ___| 
+  \___ \ / _` | '_ \| __| '_ \ / _ \/ __| '_ \   | |\/| | |_) \___ \ 
+   ___) | (_| | | | | |_| | | | (_) \__ \ | | |  | |  | |  _ < ___) |
+  |____/ \__,_|_| |_|\__|_| |_|\___/|___/_| |_|  |_|  |_|_| \_\____/ 
+          </div>
+          <div class="terminal-line t-dim">System Architecture & Simulation Sandbox • SRM IST Class of 2030</div>
+          <div class="terminal-line">Welcome! Type <span class="t-command">'help'</span> for commands, or click any interactive command pill below.</div>
+          <div class="terminal-line t-dim">-----------------------------------------------------------------</div>
+        </div>
+        <div class="terminal-prompt-row">
+          <span class="prompt-label">santhosh@srm:~$</span>
+          <input type="text" class="terminal-input" id="terminal-input" placeholder="Type a command (e.g. help, projects, codered)..." autocomplete="off" spellcheck="false">
+        </div>
+      </div>
+
+      <div class="terminal-chips-bar">
+        <button class="cmd-chip" data-cmd="help">help</button>
+        <button class="cmd-chip" data-cmd="about">about</button>
+        <button class="cmd-chip" data-cmd="photo">photo --toggle</button>
+        <button class="cmd-chip" data-cmd="projects">projects</button>
+        <button class="cmd-chip" data-cmd="codered">codered --sim</button>
+        <button class="cmd-chip" data-cmd="bite">bite --order</button>
+        <button class="cmd-chip" data-cmd="benchmark">benchmark</button>
+        <button class="cmd-chip" data-cmd="skills">skills</button>
+        <button class="cmd-chip" data-cmd="matrix">matrix</button>
+        <button class="cmd-chip" data-cmd="contact">contact</button>
+        <button class="cmd-chip" data-cmd="clear">clear</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating CLI Terminal Action Button -->
+  <button class="floating-terminal-fab" id="fab-terminal-btn" title="Open Interactive Developer Terminal">
+    <span class="fab-dot"></span>
+    <span>&gt;_ Developer CLI</span>
+  </button>
+
+  <!-- Toast Notification Bubble Container -->
+  <div class="toast-container" id="toast-container"></div>
 
   <!-- Crystal-Clear 100vw x 100vh Full View Canvas Rendering Script -->
   <script>
@@ -1313,6 +2424,623 @@
     resizeCanvas();
     calculateTargetFrame();
     requestAnimationFrame(animLoop);
+
+    /* ==========================================================================
+       Interactive Portfolio Enhancements
+       - Web Audio Sound FX Engine
+       - Live IST Time Ticker
+       - Interactive Systems & Simulation Lab (CodeRed & Algorithm Benchmarks)
+       - Interactive Developer CLI Terminal (santhosh-cli)
+       - Toast Notifications & Clipboard Handlers
+       ========================================================================== */
+
+    // 1. Web Audio Synthesizer (Zero dependencies, offline sound feedback)
+    let audioCtx = null;
+    let soundEnabled = false;
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        if (AudioContext) {
+          audioCtx = new AudioContext();
+        }
+      }
+      if (audioCtx && audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    function playTone(freq, type = 'sine', duration = 0.05, gainVal = 0.08) {
+      if (!soundEnabled) return;
+      try {
+        initAudio();
+        if (!audioCtx) return;
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        gain.gain.setValueAtTime(gainVal, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {}
+    }
+
+    const soundToggleBtn = document.getElementById('sound-toggle-btn');
+    if (soundToggleBtn) {
+      soundToggleBtn.addEventListener('click', () => {
+        soundEnabled = !soundEnabled;
+        if (soundEnabled) {
+          initAudio();
+          soundToggleBtn.classList.add('active');
+          soundToggleBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i>';
+          playTone(660, 'sine', 0.08, 0.1);
+          showToast('Sound Effects Enabled 🔊');
+        } else {
+          soundToggleBtn.classList.remove('active');
+          soundToggleBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i>';
+          showToast('Sound Effects Muted 🔇');
+        }
+      });
+    }
+
+    // 2. Toast Notification System
+    function showToast(message, icon = 'fa-check') {
+      const container = document.getElementById('toast-container');
+      if (!container) return;
+      const toast = document.createElement('div');
+      toast.className = 'toast-bubble';
+      toast.innerHTML = `<i class="fa-solid ${icon}" style="color: #60a5fa;"></i> <span>${message}</span>`;
+      container.appendChild(toast);
+      playTone(520, 'triangle', 0.06);
+
+      setTimeout(() => {
+        if (toast.parentNode) {
+          toast.parentNode.removeChild(toast);
+        }
+      }, 3100);
+    }
+
+    // 3. Live IST Clock (Chennai, India)
+    function updateISTClock() {
+      const clockEl = document.getElementById('live-ist-clock');
+      if (!clockEl) return;
+      try {
+        const now = new Date();
+        const istString = now.toLocaleTimeString('en-US', {
+          timeZone: 'Asia/Kolkata',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: true
+        });
+        clockEl.textContent = `${istString} IST`;
+      } catch (e) {
+        clockEl.textContent = 'Chennai, India';
+      }
+    }
+    updateISTClock();
+    setInterval(updateISTClock, 1000);
+
+    // Profile Photo Switcher
+    const profilePhotos = [
+      { src: 'santhosh_profile_portrait.jpg', label: 'Photo 1' },
+      { src: 'santhosh 1 portfolio image.jpg', label: 'Photo 2' }
+    ];
+    let currentPhotoIdx = 0;
+    const avatarDisplay = document.getElementById('profile-avatar-display');
+    const avatarSwitchBtn = document.getElementById('avatar-switch-btn');
+    const photoLabel = document.getElementById('photo-label');
+
+    function toggleProfilePhoto() {
+      currentPhotoIdx = (currentPhotoIdx + 1) % profilePhotos.length;
+      if (avatarDisplay) {
+        avatarDisplay.style.opacity = '0.4';
+        setTimeout(() => {
+          avatarDisplay.src = profilePhotos[currentPhotoIdx].src;
+          avatarDisplay.style.opacity = '1';
+        }, 150);
+      }
+      if (photoLabel) {
+        photoLabel.textContent = profilePhotos[currentPhotoIdx].label;
+      }
+      playTone(620, 'sine', 0.05);
+      showToast(`Switched profile portrait to ${profilePhotos[currentPhotoIdx].label}`, 'fa-camera');
+    }
+
+    if (avatarSwitchBtn) {
+      avatarSwitchBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleProfilePhoto();
+      });
+    }
+    if (avatarDisplay) {
+      avatarDisplay.addEventListener('click', toggleProfilePhoto);
+    }
+
+    // 4. Copy-to-Clipboard triggers
+    document.querySelectorAll('.btn-copy-trigger').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const text = btn.getAttribute('data-copy');
+        if (!text) return;
+        navigator.clipboard.writeText(text).then(() => {
+          showToast(`Copied to clipboard: ${text}`, 'fa-clipboard-check');
+          playTone(720, 'sine', 0.07);
+        }).catch(() => {
+          showToast(`Direct access: ${text}`, 'fa-info-circle');
+        });
+      });
+    });
+
+    // 5. Contact Form Submission
+    const contactForm = document.getElementById('portfolio-contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const nameInput = document.getElementById('contact-name');
+        const name = nameInput ? nameInput.value : 'there';
+        showToast(`Thank you, ${name}! Message received.`, 'fa-paper-plane');
+        contactForm.reset();
+        playTone(587, 'sine', 0.1);
+      });
+    }
+
+    // 6. CodeRed Surge Simulation Sandbox Engine
+    const sliderPatients = document.getElementById('slider-surge-patients');
+    const sliderBeds = document.getElementById('slider-icu-beds');
+    const sliderVents = document.getElementById('slider-vents');
+
+    const valPatients = document.getElementById('val-surge-patients');
+    const valBeds = document.getElementById('val-icu-beds');
+    const valVents = document.getElementById('val-vents');
+
+    const metricOccupancy = document.getElementById('metric-occupancy');
+    const metricTriage = document.getElementById('metric-triage');
+    const metricSaturation = document.getElementById('metric-saturation');
+    const simStatusBox = document.getElementById('sim-status-box');
+    const simStatusTitle = document.getElementById('sim-status-title');
+    const simStatusDesc = document.getElementById('sim-status-desc');
+
+    function calculateCodeRedModel() {
+      if (!sliderPatients || !sliderBeds || !sliderVents) return;
+      const patients = parseInt(sliderPatients.value, 10);
+      const beds = parseInt(sliderBeds.value, 10);
+      const vents = parseInt(sliderVents.value, 10);
+
+      valPatients.textContent = `${patients} patients / 24h`;
+      valBeds.textContent = `${beds} beds`;
+      valVents.textContent = `${vents} units`;
+
+      // 15% need ICU, 9% require mechanical ventilators
+      const icuNeeded = patients * 0.15;
+      const ventNeeded = patients * 0.09;
+      const occupancy = Math.min(100, Math.round((icuNeeded / beds) * 1000) / 10);
+      const ventStrain = Math.min(100, Math.round((ventNeeded / vents) * 1000) / 10);
+
+      metricOccupancy.textContent = `${occupancy}%`;
+
+      if (occupancy < 75) {
+        metricTriage.textContent = 'OPTIMAL';
+        metricTriage.style.color = '#34d399';
+        metricSaturation.textContent = '> 48.0 hrs';
+        simStatusBox.className = 'sim-status-banner optimal';
+        simStatusTitle.innerHTML = '<i class="fa-solid fa-circle-check" style="color: #34d399;"></i> PROTOCOL ALPHA: Baseline Nominal';
+        simStatusDesc.textContent = 'ICU capacity and ventilator reserves are operating within standard safety tolerances. No triage diversion required.';
+      } else if (occupancy >= 75 && occupancy < 90) {
+        metricTriage.textContent = 'HIGH STRAIN';
+        metricTriage.style.color = '#fbbf24';
+        const hours = Math.max(1, Math.round((beds / (patients / 24)) * 10) / 10);
+        metricSaturation.textContent = `${hours} hrs`;
+        simStatusBox.className = 'sim-status-banner warning';
+        simStatusTitle.innerHTML = '<i class="fa-solid fa-triangle-exclamation" style="color: #fbbf24;"></i> PROTOCOL BETA: Surge Warning';
+        simStatusDesc.textContent = `Surge pressure at ${occupancy}%. Stage auxiliary triage gate. Queue Level 4-5 non-urgent consultations for outpatient diversion.`;
+      } else {
+        metricTriage.textContent = 'CRITICAL RED';
+        metricTriage.style.color = '#ef4444';
+        const hours = Math.max(0.5, Math.round((beds / (patients / 24) * 0.75) * 10) / 10);
+        metricSaturation.textContent = `${hours} hrs`;
+        simStatusBox.className = 'sim-status-banner';
+        simStatusTitle.innerHTML = '<i class="fa-solid fa-skull-crossbones" style="color: #ef4444;"></i> PROTOCOL DELTA: CodeRed Saturation Imminent';
+        simStatusDesc.textContent = `CRITICAL: Resource saturation point breached (${occupancy}% ICU, ${ventStrain}% Vents). Automated triage: Divert ambulances to tertiary medical hubs; activate emergency surge ward.`;
+      }
+    }
+
+    [sliderPatients, sliderBeds, sliderVents].forEach(sl => {
+      if (sl) {
+        sl.addEventListener('input', () => {
+          calculateCodeRedModel();
+          playTone(400 + Math.random() * 200, 'sine', 0.02, 0.03);
+        });
+      }
+    });
+
+    const resetSimBtn = document.getElementById('btn-reset-sim');
+    if (resetSimBtn) {
+      resetSimBtn.addEventListener('click', () => {
+        if (sliderPatients) sliderPatients.value = 260;
+        if (sliderBeds) sliderBeds.value = 45;
+        if (sliderVents) sliderVents.value = 28;
+        calculateCodeRedModel();
+        showToast('CodeRed Simulator parameters reset to baseline');
+        playTone(440, 'triangle', 0.08);
+      });
+    }
+
+    calculateCodeRedModel();
+
+    // 7. Real-Time In-Browser Algorithm Benchmark Suite
+    let currentBenchSize = 5000;
+    const benchSizeBtns = document.querySelectorAll('.bench-size-btn');
+    benchSizeBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        benchSizeBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentBenchSize = parseInt(btn.getAttribute('data-size'), 10);
+        playTone(500, 'sine', 0.04);
+      });
+    });
+
+    // QuickSort Algorithm
+    function quickSort(arr) {
+      if (arr.length <= 1) return arr;
+      const pivot = arr[Math.floor(arr.length / 2)];
+      const left = [];
+      const middle = [];
+      const right = [];
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < pivot) left.push(arr[i]);
+        else if (arr[i] === pivot) middle.push(arr[i]);
+        else right.push(arr[i]);
+      }
+      return quickSort(left).concat(middle, quickSort(right));
+    }
+
+    // MergeSort Algorithm
+    function mergeSort(arr) {
+      if (arr.length <= 1) return arr;
+      const mid = Math.floor(arr.length / 2);
+      const left = mergeSort(arr.slice(0, mid));
+      const right = mergeSort(arr.slice(mid));
+      const res = [];
+      let i = 0, j = 0;
+      while (i < left.length && j < right.length) {
+        if (left[i] < right[j]) res.push(left[i++]);
+        else res.push(right[j++]);
+      }
+      return res.concat(left.slice(i)).concat(right.slice(j));
+    }
+
+    // SelectionSort (Safe capped for O(N^2) comparison)
+    function selectionSortSample(arr) {
+      const sample = arr.slice(0, Math.min(1500, arr.length));
+      const n = sample.length;
+      for (let i = 0; i < n; i++) {
+        let minIdx = i;
+        for (let j = i + 1; j < n; j++) {
+          if (sample[j] < sample[minIdx]) minIdx = j;
+        }
+        const temp = sample[i];
+        sample[i] = sample[minIdx];
+        sample[minIdx] = temp;
+      }
+      return sample;
+    }
+
+    const runBenchBtn = document.getElementById('btn-run-benchmark');
+    if (runBenchBtn) {
+      runBenchBtn.addEventListener('click', () => {
+        runBenchBtn.disabled = true;
+        runBenchBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Benchmarking...';
+        playTone(600, 'sine', 0.08);
+
+        setTimeout(() => {
+          // Generate dataset
+          const raw = [];
+          for (let i = 0; i < currentBenchSize; i++) {
+            raw.push(Math.floor(Math.random() * 100000));
+          }
+
+          // 1. QuickSort
+          const t0 = performance.now();
+          quickSort([...raw]);
+          const tQuick = Math.max(0.1, performance.now() - t0);
+
+          // 2. MergeSort
+          const t1 = performance.now();
+          mergeSort([...raw]);
+          const tMerge = Math.max(0.1, performance.now() - t1);
+
+          // 3. Engine Native Sort
+          const t2 = performance.now();
+          [...raw].sort((a, b) => a - b);
+          const tNative = Math.max(0.1, performance.now() - t2);
+
+          // 4. SelectionSort
+          const t3 = performance.now();
+          selectionSortSample([...raw]);
+          const tQuad = Math.max(0.5, performance.now() - t3);
+
+          // Update UI
+          document.getElementById('time-quicksort').textContent = `${tQuick.toFixed(2)} ms`;
+          document.getElementById('time-mergesort').textContent = `${tMerge.toFixed(2)} ms`;
+          document.getElementById('time-nativesort').textContent = `${tNative.toFixed(2)} ms`;
+          document.getElementById('time-quadsort').textContent = `${tQuad.toFixed(2)} ms (1.5k sample)`;
+
+          const maxT = Math.max(tQuick, tMerge, tNative, tQuad);
+          document.getElementById('fill-quicksort').style.width = `${Math.min(100, Math.max(12, (tQuick / maxT) * 100))}%`;
+          document.getElementById('fill-mergesort').style.width = `${Math.min(100, Math.max(14, (tMerge / maxT) * 100))}%`;
+          document.getElementById('fill-nativesort').style.width = `${Math.min(100, Math.max(8, (tNative / maxT) * 100))}%`;
+          document.getElementById('fill-quadsort').style.width = '96%';
+
+          runBenchBtn.disabled = false;
+          runBenchBtn.innerHTML = '<i class="fa-solid fa-play"></i> Run Benchmark';
+          showToast(`Benchmark finished for ${currentBenchSize.toLocaleString()} elements!`, 'fa-bolt');
+          playTone(784, 'triangle', 0.1);
+        }, 60);
+      });
+    }
+
+    // 8. Developer CLI Terminal Modal (santhosh-cli)
+    const terminalModal = document.getElementById('terminal-modal');
+    const terminalInput = document.getElementById('terminal-input');
+    const terminalOutput = document.getElementById('terminal-output');
+    const terminalBody = document.getElementById('terminal-body');
+
+    function openTerminal() {
+      if (!terminalModal) return;
+      terminalModal.classList.add('active');
+      if (terminalInput) {
+        terminalInput.focus();
+      }
+      playTone(550, 'sine', 0.08);
+    }
+
+    function closeTerminal() {
+      if (!terminalModal) return;
+      terminalModal.classList.remove('active');
+    }
+
+    const headerTermBtn = document.getElementById('header-terminal-btn');
+    if (headerTermBtn) headerTermBtn.addEventListener('click', openTerminal);
+
+    const heroTermBtn = document.getElementById('hero-terminal-btn');
+    if (heroTermBtn) heroTermBtn.addEventListener('click', openTerminal);
+
+    const fabTermBtn = document.getElementById('fab-terminal-btn');
+    if (fabTermBtn) fabTermBtn.addEventListener('click', openTerminal);
+
+    const termCloseBtn = document.getElementById('terminal-close');
+    if (termCloseBtn) termCloseBtn.addEventListener('click', closeTerminal);
+
+    const termMinBtn = document.getElementById('terminal-min');
+    if (termMinBtn) termMinBtn.addEventListener('click', closeTerminal);
+
+    const termMaxBtn = document.getElementById('terminal-max');
+    if (termMaxBtn) {
+      termMaxBtn.addEventListener('click', () => {
+        const win = terminalModal.querySelector('.terminal-window');
+        if (win) {
+          if (win.style.maxWidth === '98vw') {
+            win.style.maxWidth = '840px';
+            win.style.height = '540px';
+          } else {
+            win.style.maxWidth = '98vw';
+            win.style.height = '88vh';
+          }
+        }
+      });
+    }
+
+    if (terminalModal) {
+      terminalModal.addEventListener('click', (e) => {
+        if (e.target === terminalModal) {
+          closeTerminal();
+        }
+      });
+    }
+
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && terminalModal && terminalModal.classList.contains('active')) {
+        closeTerminal();
+      }
+    });
+
+    const commandHistory = [];
+    let historyIndex = -1;
+
+    function appendTerminalLine(text, className = '') {
+      if (!terminalOutput) return;
+      const line = document.createElement('div');
+      line.className = `terminal-line ${className}`;
+      line.innerHTML = text;
+      terminalOutput.appendChild(line);
+      if (terminalBody) {
+        terminalBody.scrollTop = terminalBody.scrollHeight;
+      }
+    }
+
+    function executeCommand(rawCmd) {
+      const cmd = rawCmd.trim();
+      if (!cmd) return;
+
+      appendTerminalLine(`<span class="prompt-label">santhosh@srm:~$</span> <span class="t-command">${cmd}</span>`);
+      commandHistory.push(cmd);
+      historyIndex = commandHistory.length;
+      playTone(480, 'sine', 0.04);
+
+      const parts = cmd.toLowerCase().split(' ');
+      const action = parts[0];
+
+      switch (action) {
+        case 'help':
+          appendTerminalLine(`
+<span class="t-accent">AVAILABLE COMMANDS:</span>
+  <span class="t-command">about</span>       - Developer background, SRM degree & philosophy
+  <span class="t-command">photo</span>       - Toggle between profile portraits (Photo 1 & Photo 2)
+  <span class="t-command">projects</span>    - Catalog of featured platforms (CodeRed, Bite, Systems)
+  <span class="t-command">codered</span>     - Run simulated hospital crisis surge calculation
+  <span class="t-command">bite</span>        - Run mock smart food order dispatch workflow
+  <span class="t-command">benchmark</span>   - Run live sorting algorithm benchmark in terminal
+  <span class="t-command">skills</span>      - Technical competencies & language proficiency
+  <span class="t-command">matrix</span>      - Trigger digital phosphor rain stream
+  <span class="t-command">contact</span>     - Direct contact handles, email & phone
+  <span class="t-command">clear</span>       - Clear console output
+  <span class="t-command">exit</span>        - Close terminal window
+          `);
+          break;
+
+        case 'photo':
+        case 'pic':
+          toggleProfilePhoto();
+          appendTerminalLine(`[+] Profile photo updated: <span class="t-success">${profilePhotos[currentPhotoIdx].label}</span> active.`);
+          break;
+
+        case 'about':
+          appendTerminalLine(`
+<span class="t-success">SANTHOSH MRS</span>
+Computer Science Undergraduate @ SRM Institute of Science and Technology (B.Tech '30).
+Focused on systems programming, algorithmic optimization, and simulation modeling.
+Creator of CodeRed (VIT Hackathon: Resonance 1.0) and Bite (Food Ordering Platform).
+Location: Chennai, Tamil Nadu, India.
+          `);
+          break;
+
+        case 'projects':
+          appendTerminalLine(`
+<span class="t-accent">FEATURED PROJECTS & PLATFORMS:</span>
+1. <span class="t-command">CodeRed</span> - Hospital Crisis Surge Simulator (VIT Resonance 1.0)
+   URL: <a href="https://code-red001.lovable.app" target="_blank" style="color: #60a5fa;">code-red001.lovable.app</a>
+   Tech: Algorithmic triage modeling, resource tradeoff engine.
+
+2. <span class="t-command">Bite</span> - Smart Food Ordering Platform
+   URL: <a href="https://bite-food-orfering-platform.vercel.app/" target="_blank" style="color: #60a5fa;">bite-food-orfering-platform.vercel.app</a>
+   Tech: Real-time menu state, cart synchronization, dispatch tracking.
+
+3. <span class="t-command">Systems Programming Suite</span>
+   Tech: C, C++, Python memory-optimized data structures & algorithms.
+          `);
+          break;
+
+        case 'codered':
+          appendTerminalLine(`
+<span class="t-warn">[SIMULATING CODERED 72-HOUR CRISIS TRIAGE]</span>
+[1/3] Parsing patient surge input: 320 mass-casualty inflow/24h...
+[2/3] Analyzing capacity: 45 ICU beds, 28 ventilators...
+[3/3] Calculating triage metrics...
+      -> Bed Saturation: <span style="color:#ef4444;font-weight:bold;">96.8% (CRITICAL)</span>
+      -> Estimated Time to Saturation: <span style="color:#fbbf24;">4.8 hours</span>
+      -> Automated Decision Engine Protocol:
+         <span class="t-success">[TRIGGER DELTA-4]</span> Divert non-emergent Level 4-5 cases to regional outpatient clinics.
+         Deploy auxiliary ventilator reserve circuits to Ward B.
+          `);
+          break;
+
+        case 'bite':
+          appendTerminalLine(`
+<span class="t-accent">[SIMULATING BITE FOOD ORDERING ENGINE]</span>
+[+] Cart populated: Margherita Pizza (Double Cheese) + Artisanal Cold Brew
+[+] Subtotal: $16.50 | Promo Code: "SANTHOSH2026" applied (-$3.00)
+[+] Final Total: $13.50
+[+] Dispatch Route Calculated: ETA 18 minutes (Driver assigned: #DK-409)
+[+] Status: <span class="t-success">Order Active & En Route</span>
+          `);
+          break;
+
+        case 'benchmark':
+          appendTerminalLine(`[+] Generating 10,000 random integers for in-memory benchmark...`);
+          const testArr = Array.from({ length: 10000 }, () => Math.floor(Math.random() * 100000));
+          const tStart = performance.now();
+          testArr.sort((a, b) => a - b);
+          const dur = (performance.now() - tStart).toFixed(3);
+          appendTerminalLine(`[+] Native V8 Sort Benchmark: <span class="t-success">${dur} ms</span> (10,000 elements sorted)`);
+          break;
+
+        case 'skills':
+          appendTerminalLine(`
+<span class="t-accent">SKILLS & ARCHITECTURE READOUT:</span>
+  C / C++               [████████████████░░░░] 82% Systems Architecture
+  Python                [██████████████████░░] 90% Automation & Data
+  JavaScript (ES6+)     [█████████████████░░░] 85% Modern Web Apps
+  Simulation Modeling   [██████████████████░░] 88% Crisis & Tradeoff Models
+  Linux CLI / Git       [█████████████████░░░] 85% Versioning & Devops
+          `);
+          break;
+
+        case 'matrix':
+          appendTerminalLine(`
+<span class="t-success">
+01000011 01101111 01100100 01100101 01010010 01100101 01100100
+01010011 01111001 01110011 01110100 01100101 01101101 01110011
+Wake up, developer...
+The matrix has you.
+Algorithms rule the digital space.
+</span>
+          `);
+          break;
+
+        case 'contact':
+          appendTerminalLine(`
+<span class="t-accent">CONTACT CHANNELS:</span>
+  Email:    <a href="mailto:santhoshmrs4490@gmail.com" style="color: #60a5fa;">santhoshmrs4490@gmail.com</a>
+  Phone:    <a href="tel:+919361513313" style="color: #60a5fa;">+91 9361513313</a>
+  GitHub:   <a href="https://github.com/santhoshmrs4490-sketch" target="_blank" style="color: #60a5fa;">github.com/santhoshmrs4490-sketch</a>
+  Vercel:   <a href="https://vercel.com/ck21-2777/~/deployments" target="_blank" style="color: #60a5fa;">vercel.com/ck21-2777</a>
+  LinkedIn: <a href="https://linkedin.com/in/santhosh-m-r-s-4bb067416" target="_blank" style="color: #60a5fa;">linkedin.com/in/santhosh-m-r-s-4bb067416</a>
+          `);
+          break;
+
+        case 'clear':
+          if (terminalOutput) {
+            terminalOutput.innerHTML = '';
+          }
+          break;
+
+        case 'exit':
+        case 'quit':
+          closeTerminal();
+          break;
+
+        default:
+          appendTerminalLine(`<span class="t-warn">Command not recognized: '${action}'. Type <span class="t-command">'help'</span> for available commands.</span>`);
+          break;
+      }
+    }
+
+    if (terminalInput) {
+      terminalInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') {
+          const val = terminalInput.value;
+          terminalInput.value = '';
+          executeCommand(val);
+        } else if (e.key === 'ArrowUp') {
+          if (historyIndex > 0) {
+            historyIndex--;
+            terminalInput.value = commandHistory[historyIndex] || '';
+          }
+        } else if (e.key === 'ArrowDown') {
+          if (historyIndex < commandHistory.length - 1) {
+            historyIndex++;
+            terminalInput.value = commandHistory[historyIndex] || '';
+          } else {
+            historyIndex = commandHistory.length;
+            terminalInput.value = '';
+          }
+        }
+      });
+    }
+
+    // Interactive Command Chips inside Terminal
+    document.querySelectorAll('.cmd-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const cmd = chip.getAttribute('data-cmd');
+        if (cmd) {
+          executeCommand(cmd);
+          if (terminalInput) terminalInput.focus();
+        }
+      });
+    });
   </script>
 </body>
 </html>
