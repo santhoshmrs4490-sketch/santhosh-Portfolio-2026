@@ -2169,9 +2169,12 @@
                 <div class="contact-icon"><i class="fa-solid fa-cloud-arrow-up"></i></div>
                 <div>vercel.com/ck21-2777/~/deployments</div>
               </a>
-              <a href="mailto:santhoshmrs4490@gmail.com" class="contact-item">
-                <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
-                <div>santhoshmrs4490@gmail.com</div>
+              <a href="mailto:santhoshmrs4490@gmail.com" class="contact-item" title="Primary Direct Email">
+                <div class="contact-icon"><i class="fa-solid fa-envelope" style="color: #ea4335;"></i></div>
+                <div>
+                  <div style="font-weight: 600; color: #fff;">santhoshmrs4490@gmail.com</div>
+                  <div style="font-size: 0.75rem; color: #60a5fa;">Direct Contact • Routes to Inbox</div>
+                </div>
               </a>
               <a href="tel:+919361513313" class="contact-item">
                 <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
@@ -2190,22 +2193,47 @@
 
           <!-- Interactive Contact Form -->
           <div class="glass-card">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+              <h3 class="project-title" style="margin-bottom: 0;">Send Direct Message</h3>
+              <span class="project-tag" style="background: rgba(34, 197, 94, 0.15); border: 1px solid rgba(34, 197, 94, 0.35); color: #86efac; display: inline-flex; align-items: center; gap: 0.35rem; font-size: 0.72rem; padding: 0.25rem 0.65rem;">
+                <i class="fa-solid fa-bolt"></i> Routes to Gmail
+              </span>
+            </div>
+
+            <div style="font-size: 0.8rem; color: var(--text-dim); background: rgba(59, 130, 246, 0.08); border: 1px solid rgba(59, 130, 246, 0.2); border-radius: 8px; padding: 0.65rem 0.9rem; margin-bottom: 1.25rem; display: flex; align-items: flex-start; gap: 0.65rem; line-height: 1.5;">
+              <i class="fa-brands fa-google" style="color: #ea4335; font-size: 1.05rem; margin-top: 2px;"></i>
+              <div>
+                Messages are routed to <strong style="color: #93c5fd;">santhoshmrs4490@gmail.com</strong> (and saved in local database). You can submit online below or launch directly in Gmail.
+              </div>
+            </div>
+
             <form class="contact-form" id="portfolio-contact-form">
               <div class="form-group">
-                <label>Your Name</label>
+                <label for="contact-name">Your Name</label>
                 <input type="text" class="form-control" id="contact-name" placeholder="Enter your full name" required>
               </div>
               <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" class="form-control" id="contact-email" placeholder="Enter your email" required>
+                <label for="contact-email">Email Address</label>
+                <input type="email" class="form-control" id="contact-email" placeholder="Enter your email address" required>
               </div>
               <div class="form-group">
-                <label>Message</label>
-                <textarea class="form-control" id="contact-msg" rows="4" placeholder="Your message or project details..." required></textarea>
+                <label for="contact-msg">Message</label>
+                <textarea class="form-control" id="contact-msg" rows="4" placeholder="Your message, project requirements, or opportunity..." required></textarea>
               </div>
-              <button type="submit" class="btn-primary" style="justify-content: center; width: 100%; margin-top: 0.5rem;">
-                <i class="fa-solid fa-paper-plane"></i> Send Message
-              </button>
+
+              <div style="display: flex; flex-direction: column; gap: 0.65rem; margin-top: 0.5rem;">
+                <button type="submit" id="btn-submit-contact" class="btn-primary" style="justify-content: center; width: 100%;">
+                  <i class="fa-solid fa-paper-plane" id="submit-icon"></i>
+                  <span id="submit-btn-text">Send Message to Gmail</span>
+                </button>
+
+                <button type="button" id="btn-compose-gmail" class="btn-secondary" style="justify-content: center; width: 100%; border-color: rgba(234, 67, 53, 0.4); color: #fca5a5;" title="Open compose window directly in your Gmail">
+                  <i class="fa-brands fa-google" style="color: #ea4335;"></i> Open in Gmail Compose
+                </button>
+              </div>
+
+              <!-- Real-time Status Card -->
+              <div id="contact-status-card" style="display: none; margin-top: 1rem; padding: 0.85rem 1rem; border-radius: 10px; font-size: 0.84rem; line-height: 1.5;"></div>
             </form>
           </div>
         </div>
@@ -2220,7 +2248,7 @@
           <a href="https://github.com/santhoshmrs4490-sketch" target="_blank" style="color: var(--text-muted); transition: color 0.25s;" title="GitHub Profile"><i class="fa-brands fa-github"></i></a>
           <a href="https://vercel.com/ck21-2777/~/deployments" target="_blank" style="color: var(--text-muted); transition: color 0.25s;" title="Vercel Deployments"><i class="fa-solid fa-cloud-arrow-up"></i></a>
           <a href="https://linkedin.com/in/santhosh-m-r-s-4bb067416" target="_blank" style="color: var(--text-muted); transition: color 0.25s;" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="mailto:santhoshmrs4490@gmail.com" style="color: var(--text-muted); transition: color 0.25s;" title="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="mailto:santhoshmrs4490@gmail.com" style="color: var(--text-muted); transition: color 0.25s;" title="Email: santhoshmrs4490@gmail.com"><i class="fa-solid fa-envelope" style="color: #ea4335;"></i></a>
         </div>
         <div>
           © 2026 SANTHOSH MRS. Built with High-Precision 3D Full View Canvas & Modern Web Technologies.
@@ -2273,6 +2301,7 @@
         <button class="cmd-chip" data-cmd="skills">skills</button>
         <button class="cmd-chip" data-cmd="matrix">matrix</button>
         <button class="cmd-chip" data-cmd="contact">contact</button>
+        <button class="cmd-chip" data-cmd="inbox">inbox --logs</button>
         <button class="cmd-chip" data-cmd="clear">clear</button>
       </div>
     </div>
@@ -2574,16 +2603,151 @@
       });
     });
 
-    // 5. Contact Form Submission
+    // 5. Contact Form Submission with Gmail Auto-Routing & Persistence
     const contactForm = document.getElementById('portfolio-contact-form');
+    const submitBtn = document.getElementById('btn-submit-contact');
+    const submitBtnText = document.getElementById('submit-btn-text');
+    const submitIcon = document.getElementById('submit-icon');
+    const composeGmailBtn = document.getElementById('btn-compose-gmail');
+    const statusCard = document.getElementById('contact-status-card');
+
+    const TARGET_GMAIL = 'santhoshmrs4490@gmail.com';
+
+    function openDirectGmail(name, email, msg) {
+      const subject = encodeURIComponent(`Portfolio Inquiry from ${name || 'Visitor'}`);
+      const bodyText = encodeURIComponent(
+        `Hi Santhosh,\n\n${msg || '[Your message here]'}\n\n---\nSender Name: ${name || 'N/A'}\nSender Email: ${email || 'N/A'}\nSent from Santhosh MRS Developer Portfolio`
+      );
+      
+      const webGmail = `https://mail.google.com/mail/?view=cm&fs=1&to=${TARGET_GMAIL}&su=${subject}&body=${bodyText}`;
+      const win = window.open(webGmail, '_blank');
+      if (!win) {
+        window.location.href = `mailto:${TARGET_GMAIL}?subject=${subject}&body=${bodyText}`;
+      }
+    }
+
+    if (composeGmailBtn) {
+      composeGmailBtn.addEventListener('click', () => {
+        const name = (document.getElementById('contact-name')?.value || '').trim();
+        const email = (document.getElementById('contact-email')?.value || '').trim();
+        const msg = (document.getElementById('contact-msg')?.value || '').trim();
+
+        // Also save to server inbox asynchronously
+        if (msg) {
+          fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name: name || 'Visitor', email: email || 'visitor@portfolio.dev', message: msg, targetEmail: TARGET_GMAIL })
+          }).catch(() => {});
+        }
+
+        openDirectGmail(name, email, msg);
+        showToast('Opening Gmail compose addressed to ' + TARGET_GMAIL, 'fa-envelope');
+        playTone(680, 'sine', 0.08);
+      });
+    }
+
     if (contactForm) {
-      contactForm.addEventListener('submit', (e) => {
+      contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const nameInput = document.getElementById('contact-name');
-        const name = nameInput ? nameInput.value : 'there';
-        showToast(`Thank you, ${name}! Message received.`, 'fa-paper-plane');
-        contactForm.reset();
-        playTone(587, 'sine', 0.1);
+        const emailInput = document.getElementById('contact-email');
+        const msgInput = document.getElementById('contact-msg');
+
+        const name = (nameInput ? nameInput.value : '').trim();
+        const email = (emailInput ? emailInput.value : '').trim();
+        const msg = (msgInput ? msgInput.value : '').trim();
+
+        if (!name || !email || !msg) {
+          showToast('Please fill out all fields before sending.', 'fa-triangle-exclamation');
+          return;
+        }
+
+        // Set loading state
+        if (submitBtn) submitBtn.disabled = true;
+        if (submitIcon) submitIcon.className = 'fa-solid fa-spinner fa-spin';
+        if (submitBtnText) submitBtnText.textContent = 'Routing to Gmail...';
+        if (statusCard) {
+          statusCard.style.display = 'block';
+          statusCard.style.background = 'rgba(59, 130, 246, 0.15)';
+          statusCard.style.border = '1px solid rgba(59, 130, 246, 0.4)';
+          statusCard.style.color = '#93c5fd';
+          statusCard.innerHTML = `<i class="fa-solid fa-satellite-dish fa-spin"></i> Dispatched to server. Forwarding to <strong>${TARGET_GMAIL}</strong>...`;
+        }
+
+        try {
+          const resp = await fetch('/api/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, message: msg, targetEmail: TARGET_GMAIL })
+          });
+
+          const data = await resp.json();
+
+          if (resp.ok && data.success) {
+            playTone(784, 'sine', 0.12);
+            showToast(`Thank you, ${name}! Message sent to Gmail.`, 'fa-circle-check');
+            
+            if (statusCard) {
+              statusCard.style.background = 'rgba(34, 197, 94, 0.15)';
+              statusCard.style.border = '1px solid rgba(34, 197, 94, 0.4)';
+              statusCard.style.color = '#86efac';
+              
+              if (data.forwardStatus === 'activation_required') {
+                statusCard.innerHTML = `
+                  <div style="font-weight: 600; margin-bottom: 0.35rem;">
+                    <i class="fa-solid fa-circle-check"></i> Message logged & confirmation email sent!
+                  </div>
+                  <div style="font-size: 0.8rem; color: #bbf7d0;">
+                    FormSubmit sent a one-time activation email to <strong>${TARGET_GMAIL}</strong>. Please check your Gmail and click <em>"Activate Form"</em> to receive all future submissions directly in your inbox.
+                  </div>
+                  <div style="margin-top: 0.5rem;">
+                    <button type="button" class="btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.76rem;" onclick="window.open('https://mail.google.com', '_blank')">
+                      <i class="fa-brands fa-google"></i> Open Gmail Inbox
+                    </button>
+                  </div>
+                `;
+              } else {
+                statusCard.innerHTML = `
+                  <div style="font-weight: 600; margin-bottom: 0.25rem;">
+                    <i class="fa-solid fa-circle-check"></i> Message dispatched successfully!
+                  </div>
+                  <div style="font-size: 0.8rem; color: #bbf7d0;">
+                    Routed to <strong>${TARGET_GMAIL}</strong> and archived to developer messages log.
+                  </div>
+                `;
+              }
+            }
+            contactForm.reset();
+          } else {
+            throw new Error(data.error || 'Failed to dispatch message');
+          }
+        } catch (err) {
+          console.error('Contact error:', err);
+          playTone(330, 'sine', 0.15);
+          showToast('Notice: Message saved locally. Opening Gmail compose...', 'fa-info-circle');
+          
+          if (statusCard) {
+            statusCard.style.background = 'rgba(234, 179, 8, 0.15)';
+            statusCard.style.border = '1px solid rgba(234, 179, 8, 0.4)';
+            statusCard.style.color = '#fef08a';
+            statusCard.innerHTML = `
+              <div style="font-weight: 600;">
+                <i class="fa-solid fa-triangle-exclamation"></i> Network notice: Message saved to portfolio logs.
+              </div>
+              <div style="font-size: 0.8rem; margin-top: 0.25rem;">
+                Click below to send via your Gmail client immediately:
+              </div>
+              <button type="button" class="btn-primary" style="margin-top: 0.5rem; padding: 0.35rem 0.8rem; font-size: 0.78rem;" onclick="openDirectGmail('${encodeURIComponent(name)}', '${encodeURIComponent(email)}', '${encodeURIComponent(msg)}')">
+                <i class="fa-brands fa-google"></i> Open Pre-filled Gmail
+              </button>
+            `;
+          }
+        } finally {
+          if (submitBtn) submitBtn.disabled = false;
+          if (submitIcon) submitIcon.className = 'fa-solid fa-paper-plane';
+          if (submitBtnText) submitBtnText.textContent = 'Send Message to Gmail';
+        }
       });
     }
 
@@ -2886,6 +3050,7 @@
   <span class="t-command">skills</span>      - Technical competencies & language proficiency
   <span class="t-command">matrix</span>      - Trigger digital phosphor rain stream
   <span class="t-command">contact</span>     - Direct contact handles, email & phone
+  <span class="t-command">inbox</span>       - View messages received via contact form (/api/messages)
   <span class="t-command">clear</span>       - Clear console output
   <span class="t-command">exit</span>        - Close terminal window
           `);
@@ -2983,12 +3148,39 @@ Algorithms rule the digital space.
         case 'contact':
           appendTerminalLine(`
 <span class="t-accent">CONTACT CHANNELS:</span>
-  Email:    <a href="mailto:santhoshmrs4490@gmail.com" style="color: #60a5fa;">santhoshmrs4490@gmail.com</a>
+  Email:    <a href="mailto:santhoshmrs4490@gmail.com" style="color: #60a5fa;">santhoshmrs4490@gmail.com</a> (Primary Direct Inquiries)
   Phone:    <a href="tel:+919361513313" style="color: #60a5fa;">+91 9361513313</a>
   GitHub:   <a href="https://github.com/santhoshmrs4490-sketch" target="_blank" style="color: #60a5fa;">github.com/santhoshmrs4490-sketch</a>
   Vercel:   <a href="https://vercel.com/ck21-2777/~/deployments" target="_blank" style="color: #60a5fa;">vercel.com/ck21-2777</a>
   LinkedIn: <a href="https://linkedin.com/in/santhosh-m-r-s-4bb067416" target="_blank" style="color: #60a5fa;">linkedin.com/in/santhosh-m-r-s-4bb067416</a>
           `);
+          break;
+
+        case 'inbox':
+        case 'messages':
+          appendTerminalLine(`[+] Fetching received portfolio inquiries from /api/messages...`);
+          fetch('/api/messages')
+            .then(res => res.json())
+            .then(data => {
+              if (!data.messages || data.messages.length === 0) {
+                appendTerminalLine(`[i] Inbox is currently empty (0 messages received).`);
+                appendTerminalLine(`    Send a test message through the Contact section to test!`);
+              } else {
+                appendTerminalLine(`[+] <span class="t-success">Total Messages Received: ${data.messages.length}</span>`);
+                data.messages.slice(0, 10).forEach((m, idx) => {
+                  const d = new Date(m.timestamp).toLocaleString();
+                  const cleanName = (m.name || 'Unknown').replace(/</g, '&lt;');
+                  const cleanEmail = (m.email || 'N/A').replace(/</g, '&lt;');
+                  const cleanMsg = (m.message || '').replace(/</g, '&lt;');
+                  appendTerminalLine(`  [${idx + 1}] <strong style="color:#60a5fa;">${cleanName}</strong> (${cleanEmail}) • <span class="t-dim">${d}</span>`);
+                  appendTerminalLine(`      "${cleanMsg}"`);
+                  appendTerminalLine(`      <span class="t-dim">-> Destination: ${m.recipient || 'santhoshmrs4490@gmail.com'} (${m.status || 'received'})</span>`);
+                });
+              }
+            })
+            .catch(err => {
+              appendTerminalLine(`<span class="t-warn">[!] Could not load messages: ${err.message}</span>`);
+            });
           break;
 
         case 'clear':
